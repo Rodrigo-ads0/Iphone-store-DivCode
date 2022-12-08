@@ -1,0 +1,397 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+a{
+    color: rgba(238, 238, 238, 0.438);
+}
+
+
+body{
+    background: rgb(110,98,122);
+    background: linear-gradient(117deg, rgba(110,98,122,1) 0%, rgba(99,82,122,1) 0%, rgba(39,23,66,1) 26%, rgba(14,8,23,1) 53%, rgba(0,0,0,1) 73%);
+    min-height: 100vh;
+    overflow: hidden; 
+}
+
+/* -----------------------------------------------NAV BAR---------------------------------------------- */
+
+.navbar{
+    min-height: 7vh;
+    display: flex;
+    align-items: center;
+    padding: 0 34px;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    left: 50px;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-link{
+    transition: 0.5s ease;
+}
+
+.nav-link:hover{
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.hamburguer{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    margin: 5px auto;
+    background-color: #eee;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1185px){
+    .navbar{
+        background-color: #070707;
+    }
+
+    .hamburguer{
+        display: block;
+        position: absolute;
+        right: 50px;
+    }
+
+    .hamburguer.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburguer.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburguer.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    body.active {
+        overflow: hidden;
+    }
+
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 7vh;
+        gap: 0;
+        background-image: linear-gradient(
+        0deg,
+        hsl(0deg 0% 10%) 0%,
+        hsl(344deg 0% 7%) -2%,
+        hsl(0deg 0% 3%) 28%
+        );
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+        font-size: 20px;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        right: 0;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------NAV RESPONSIVE---------------------------------------------- */
+@media (max-width: 1540px){
+
+    .icon-nav{
+        position: unset;
+        margin-right: 100px;
+        margin-left: 20px;
+    }
+
+    .listBox{
+        margin-right: 20px;
+    }
+
+}
+
+@media (max-width: 1110px){
+
+    nav{
+        justify-content: space-around;
+    }
+
+    .icon-nav{
+        position: unset;
+        display: flex;
+    }
+
+    .listBox{
+        display: none;
+    }
+
+    .icon-responsive{
+        display: flex;
+        position: unset;
+    }
+}
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* -----------------------------------------------Main---------------------------------------------- */
+
+main {
+    width: 100vw;
+    height: 93vh;
+}
+.bigBox {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Caixa esquerda | Titulos e textos */
+
+.left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleBox {
+    padding: 3rem;
+    width: 50rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.7rem;
+}
+
+.titleBox h1 {
+    background: -webkit-linear-gradient(left, rgb(249, 137, 253) 0%, rgb(226, 177, 248) 50%, rgb(76, 4, 90) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 600;
+    font-size: 6rem;
+}
+
+.titleBox h2 {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 2rem;
+}
+
+.new {
+    font-family: 'SF Pro Display', sans-serif;
+    color: white;
+}
+
+.info {
+    font-family: 'SF Pro Display', sans-serif;
+    color: rgba(255, 255, 255, 0.623);
+    
+
+}
+.info strong {
+    color: white;
+    font-size: 1.1rem;
+}
+
+button {
+    margin-top: 3rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 2rem;
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(224, 223, 223, 0.041);
+    font-size: 1.6rem;
+    border: 1px solid rgb(113, 35, 177);
+    width: 12.2rem;
+    height: 3.2rem;
+    box-shadow: rgba(0, 0, 0, 0.158) 0px 19px 38px, rgba(0, 0, 0, 0.116) 0px 15px 12px;
+}
+
+
+/* Caixa direita | imagem */
+.right {
+    width: 50%;
+    height: 100%;
+}
+
+.iphoneImg {
+    top: 18rem;
+    right: 0;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+}
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* --------------------------------------------Media Query-------------------------------------- */
+
+@media (max-width: 1382px) {
+    .title h1 {
+        font-size: 4rem;
+    }
+    
+}
+
+@media (max-width: 1110px) {
+    .iphoneImg {
+        display: none;
+    }
+
+    .right {
+        width: 0;
+        height: 0;
+    }
+
+    .left {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 425px) {
+
+    .titleBox h1 {
+        font-size: 2.5rem;
+    }
+
+    .titleBox h2 {
+        font-size: 1.5rem;
+    }
+
+    .new {
+        font-size: 0.8rem;
+    }
+
+    .info {
+        font-size: 0.9rem;
+    }
+
+    .info strong {
+        font-size: 1rem;
+    }
+    
+    button {
+
+    }
+
+    .left {
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titleBox {
+        padding: 3rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.7rem;
+    }
+
+}
+
+@media (max-width: 344px) {
+    .titleBox h1 {
+        font-size: 1.8rem;
+    }
+}
+/* ------------------------------------------------------------------------------ */
+
+/* -------------------------------------Animation------------------------------- */
+
+/* ANIMAÇÃO IMAGEM*/
+.iphoneImg{
+	-webkit-animation: slide-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, flick 1.5s ;
+}
+
+
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(150px);
+              transform: translateY(150px);
+              opacity: 0%;
+    }
+    100% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+              opacity: 100%;
+    }
+
+}
+
+.titleBox{
+    animation: txt-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, flick 1.5s ;
+}
+
+/* ANIMAÇÃO TEXTO */
+
+@keyframes txt-top{
+0% {
+-webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0%;
+}
+100% {
+-webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 100%;
+}
+
+}
+/* 
+ANIMAÇÃO NAV
+nav{
+    animation: txt-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, flick 1.5s ;
+} */
+
